@@ -1,5 +1,6 @@
 package principal;
 
+import buscas.BuscaEmProfundidade;
 import nos.No;
 
 public class Buscas {
@@ -22,6 +23,11 @@ public class Buscas {
 		
 		no2.setNoEsquerda(no5);
 		no2.setNoDireita(no6);		
+		
+		BuscaEmProfundidade bep = new BuscaEmProfundidade(6);
+		
+		bep.buscar(no0);
+		
 		
 	}
 }
