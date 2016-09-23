@@ -4,6 +4,7 @@ public class No {
 
 	private int valor;
 	
+	private No noPai;	
 	private No noEsquerda;
 	private No noDireita;
 	
@@ -21,6 +22,7 @@ public class No {
 
 	public void setNoEsquerda(No noEsquerda) {
 		this.noEsquerda = noEsquerda;
+		this.noEsquerda.setNoPai(this);
 	}
 
 	public No getNoDireita() {
@@ -29,6 +31,15 @@ public class No {
 
 	public void setNoDireita(No noDireita) {
 		this.noDireita = noDireita;
+		this.noDireita.setNoPai(this);
+	}
+
+	public No getNoPai() {
+		return noPai;
+	}
+
+	public void setNoPai(No noPai) {
+		this.noPai = noPai;
 	}
 	
 	

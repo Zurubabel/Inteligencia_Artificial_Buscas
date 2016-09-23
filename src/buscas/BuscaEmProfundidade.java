@@ -8,8 +8,6 @@ public class BuscaEmProfundidade {
 
 	private Stack<No> pilhaNos;
 	
-	private No noAtual;
-	
 	private int valorBusca;
 	
 	public BuscaEmProfundidade(int valorBusca) {
@@ -43,6 +41,10 @@ public class BuscaEmProfundidade {
 		
 	}
 	
+	
+	public void exibirResultado(No no) {
+		
+	}
 	
 	
 	
