@@ -25,11 +25,21 @@ public class BuscaEmProfundidade {
 
 
 	public void buscar(No no) {
+		this.pilhaNos.add(no);
 		if (isResultadoBusca(no)) {
 			// Exibir o caminho
+			
 		} else {
 			// Expandir os próximos nós (esquerda -> direita)
+			if (no.getNoEsquerda() != null) { 
+				// Tem o nó da esquerda
+				this.buscar(no.getNoEsquerda());
+			} else if (no.getNoDireita() != null) {
+				// Tem o nó da direita
+				this.buscar(no.getNoDireita());
+			}
 		}
+		this.pilhaNos.pop();
 		
 	}
 	
