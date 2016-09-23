@@ -8,6 +8,8 @@ public class BuscaEmProfundidade {
 
 	private Stack<No> pilhaNos;
 	
+	private String textoResposta;
+	
 	private int valorBusca;
 	
 	public BuscaEmProfundidade(int valorBusca) {
@@ -26,7 +28,7 @@ public class BuscaEmProfundidade {
 		this.pilhaNos.add(no);
 		if (isResultadoBusca(no)) {
 			// Exibir o caminho
-			
+			exibirResultadoPaternal(no);
 		} else {
 			// Expandir os próximos nós (esquerda -> direita)
 			if (no.getNoEsquerda() != null) { 
@@ -42,8 +44,18 @@ public class BuscaEmProfundidade {
 	}
 	
 	
-	public void exibirResultado(No no) {
+	public void exibirResultadoPaternal(No no) {
+		String retorno = "";
 		
+		No noValor = no;
+		
+		retorno += noValor.getValor();
+		
+		while (noValor.getNoPai() != null) {
+			noValor = noValor.getNoPai();
+			retorno += noValor.getValor() + " " + retorno;
+		}
+		this.textoResposta = retorno;
 	}
 	
 	
