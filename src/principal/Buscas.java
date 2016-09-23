@@ -21,9 +21,7 @@ public class Buscas {
 		no1.setNoDireita(no4);
 		
 		no2.setNoEsquerda(no5);
-		no2.setNoDireita(no6);
-		
+		no2.setNoDireita(no6);		
 		
 	}
-
 }
