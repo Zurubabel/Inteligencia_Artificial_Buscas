@@ -28,7 +28,8 @@ public class BuscaEmProfundidade {
 		this.pilhaNos.add(no);
 		if (isResultadoBusca(no)) {
 			// Exibir o caminho
-			exibirResultadoPaternal(no);
+			//obterResultadoPaternal(no);
+			obterResultadoViaPilha();
 			return true;
 		} else {
 			// Expandir os próximos nós (esquerda -> direita)
@@ -44,13 +45,20 @@ public class BuscaEmProfundidade {
 		return false;
 	}
 	
-	public void exibirResultadoPaternal(No no) {
+	private void obterResultadoViaPilha() {
 		String retorno = "";
 		
+		while (this.pilhaNos.size() > 0) {
+			retorno = this.pilhaNos.pop().getValor() + " " + retorno;
+		}
+		
+		this.textoResposta = retorno;
+	}
+	
+	private void obterResultadoPaternal(No no) {
+		String retorno = "";
 		No noValor = no;
-		
 		retorno += noValor.getValor();
-		
 		while (noValor.getNoPai() != null) {
 			noValor = noValor.getNoPai();
 			retorno = noValor.getValor() + " " + retorno;

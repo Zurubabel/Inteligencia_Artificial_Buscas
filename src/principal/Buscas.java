@@ -15,19 +15,19 @@ public class Buscas {
 		No no5 = new No(5);
 		No no6 = new No(6);
 		
-		/*no0.setNoEsquerda(no1);
+		no0.setNoEsquerda(no1);
 		no0.setNoDireita(no2);
 		
 		no1.setNoEsquerda(no3);
 		no1.setNoDireita(no4);
 		
 		no2.setNoEsquerda(no5);
-		no2.setNoDireita(no6);*/
+		no2.setNoDireita(no6);
 		
-		no0.setNoEsquerda(no1);
+		/*no0.setNoEsquerda(no1);
 		no1.setNoEsquerda(no3);
 		no3.setNoEsquerda(no5);
-		no5.setNoEsquerda(no2);
+		no5.setNoEsquerda(no2);*/
 		
 		BuscaEmProfundidade bep = new BuscaEmProfundidade(4);
 		
