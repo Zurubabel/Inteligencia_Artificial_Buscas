@@ -24,25 +24,25 @@ public class BuscaEmProfundidade {
 	}
 
 
-	public void buscar(No no) {
+	public boolean buscarResultado(No no) {
 		this.pilhaNos.add(no);
 		if (isResultadoBusca(no)) {
 			// Exibir o caminho
 			exibirResultadoPaternal(no);
+			return true;
 		} else {
 			// Expandir os próximos nós (esquerda -> direita)
-			if (no.getNoEsquerda() != null) { 
-				// Tem o nó da esquerda
-				this.buscar(no.getNoEsquerda());
-			} else if (no.getNoDireita() != null) {
-				// Tem o nó da direita
-				this.buscar(no.getNoDireita());
+			if (no.getNoEsquerda() != null && this.buscarResultado(no.getNoEsquerda())) { 
+				return true;
+			}
+			
+			if (no.getNoDireita() != null && this.buscarResultado(no.getNoDireita())) {
+				return true;
 			}
 		}
 		this.pilhaNos.pop();
-		
+		return false;
 	}
-	
 	
 	public void exibirResultadoPaternal(No no) {
 		String retorno = "";
@@ -53,11 +53,19 @@ public class BuscaEmProfundidade {
 		
 		while (noValor.getNoPai() != null) {
 			noValor = noValor.getNoPai();
-			retorno += noValor.getValor() + " " + retorno;
+			retorno = noValor.getValor() + " " + retorno;
 		}
 		this.textoResposta = retorno;
 	}
 	
+	
+	public void exibirTextoResultado() {
+		if (this.textoResposta != null) {
+			System.out.println("O caminho percorrido será: " + this.textoResposta);
+		} else {
+			System.out.println("O valor " + this.valorBusca + " não foi encontrado.");
+		}
+	}
 	
 	
 }
