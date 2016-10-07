@@ -9,14 +9,13 @@ public class BuscaEmLargura extends Busca {
 	
 	// Fila de dados FiFo
 	private Queue<No> filaNos;
-	
-	private String textoResposta;
 		
 	public BuscaEmLargura(int valorBusca) {
 		this.filaNos = new LinkedList<No>();
 		this.setValorBusca(valorBusca);
 	}
 	
+	@Override
 	public boolean buscarResultado(No no) {
 		if (isResultadoBusca(no)) {
 			// Se for o objetivo

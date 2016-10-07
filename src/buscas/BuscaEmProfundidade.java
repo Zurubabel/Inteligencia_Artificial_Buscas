@@ -21,7 +21,7 @@ public class BuscaEmProfundidade extends Busca{
 		return no.getValor() == valorBusca;
 	}
 
-
+	@Override
 	public boolean buscarResultado(No no) {
 		this.pilhaNos.add(no);
 		if (isResultadoBusca(no)) {

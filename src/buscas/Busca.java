@@ -5,20 +5,9 @@ import nos.No;
 public abstract class Busca {
 
 	private int valorBusca;
-	
-	public int getValorBusca() {
-		return valorBusca;
-	}
-
-	public void setValorBusca(int valorBusca) {
-		this.valorBusca = valorBusca;
-	}
-
 	private String textoResposta;
 	
-	public boolean isResultadoBusca(No no) {
-		return no.getValor() == valorBusca;
-	}
+	public abstract boolean buscarResultado(No no);
 	
 	protected void obterResultadoPaternal(No no) {
 		// Deveria ser comportamento da busca?
@@ -46,6 +35,18 @@ public abstract class Busca {
 
 	public void setTextoResposta(String textoResposta) {
 		this.textoResposta = textoResposta;
+	}
+	
+	public void setValorBusca(int valorBusca) {
+		this.valorBusca = valorBusca;
+	}
+	
+	public boolean isResultadoBusca(No no) {
+		return no.getValor() == valorBusca;
+	}
+	
+	public int getValorBusca() {
+		return valorBusca;
 	}
 	
 }
