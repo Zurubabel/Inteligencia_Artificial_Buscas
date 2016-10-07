@@ -1,5 +1,6 @@
 package principal;
 
+import buscas.BuscaEmLargura;
 import buscas.BuscaEmProfundidade;
 import nos.No;
 
@@ -29,10 +30,14 @@ public class Buscas {
 		no3.setNoEsquerda(no5);
 		no5.setNoEsquerda(no2);*/
 		
-		BuscaEmProfundidade bep = new BuscaEmProfundidade(4);
+		/*BuscaEmProfundidade bep = new BuscaEmProfundidade(4);
 		
 		bep.buscarResultado(no0);
-		bep.exibirTextoResultado();
+		bep.exibirTextoResultado();*/
+		
+		BuscaEmLargura bel = new BuscaEmLargura(4);
+		bel.buscarResultado(no0);
+		bel.exibirTextoResultado();
 		
 		
 	}
