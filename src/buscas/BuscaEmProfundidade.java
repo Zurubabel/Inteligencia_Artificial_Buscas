@@ -4,11 +4,9 @@ import java.util.Stack;
 
 import nos.No;
 
-public class BuscaEmProfundidade {
+public class BuscaEmProfundidade extends Busca{
 
 	private Stack<No> pilhaNos;
-	
-	private String textoResposta;
 	
 	private int valorBusca;
 	
@@ -52,28 +50,7 @@ public class BuscaEmProfundidade {
 			retorno = this.pilhaNos.pop().getValor() + " " + retorno;
 		}
 		
-		this.textoResposta = retorno;
-	}
-	
-	private void obterResultadoPaternal(No no) {
-		String retorno = "";
-		No noValor = no;
-		retorno += noValor.getValor();
-		while (noValor.getNoPai() != null) {
-			noValor = noValor.getNoPai();
-			retorno = noValor.getValor() + " " + retorno;
-		}
-		this.textoResposta = retorno;
-	}
-	
-	
-	public void exibirTextoResultado() {
-		if (this.textoResposta != null) {
-			System.out.println("O caminho percorrido será: " + this.textoResposta);
-		} else {
-			System.out.println("O valor " + this.valorBusca + " não foi encontrado.");
-		}
-	}
-	
+		this.setTextoResposta(retorno);
+	}		
 	
 }
