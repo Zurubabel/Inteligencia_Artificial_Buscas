@@ -1,8 +1,10 @@
 package nos;
 
-public class No {
+public class No{
 
-	private int valor;
+	private int valor;// Busca - Resultado
+	
+	private int custo;
 	
 	private No noPai;	
 	private No noEsquerda;
@@ -10,6 +12,12 @@ public class No {
 	
 	public No(int valor) {
 		this.valor = valor;
+		this.custo = 0;
+	}
+	
+	public No (int valor, int custo) {
+		this.valor = valor;
+		this.custo = custo;
 	}
 
 	public int getValor() {
@@ -41,7 +49,12 @@ public class No {
 	public void setNoPai(No noPai) {
 		this.noPai = noPai;
 	}
-	
-	
-	
+
+	public int getCusto() {
+		return custo;
+	}
+
+	public void setCusto(int custo) {
+		this.custo = custo;
+	}
 }

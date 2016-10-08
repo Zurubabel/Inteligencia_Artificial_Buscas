@@ -21,14 +21,11 @@ public class BuscaEmLargura extends Busca {
 			// Se for o objetivo
 			obterResultadoPaternal(no);
 			return true;
-		} else {
-			// Se não for o objetivo
-			
+		} else {			
 			// Adicionar os nós na fila
 			if (no.getNoEsquerda() != null) {
 				this.filaNos.add(no.getNoEsquerda());
 			}
-			
 			if (no.getNoDireita() != null) {
 				this.filaNos.add(no.getNoDireita());
 			}
@@ -39,6 +36,14 @@ public class BuscaEmLargura extends Busca {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public int contarNosFolha() {
+		if (this.filaNos != null) {
+			return this.filaNos.size();
+		}
+		return 0;
 	}
 	
 }

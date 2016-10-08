@@ -8,6 +8,7 @@ public abstract class Busca {
 	private String textoResposta;
 	
 	public abstract boolean buscarResultado(No no);
+	public abstract int contarNosFolha();
 	
 	protected void obterResultadoPaternal(No no) {
 		// Deveria ser comportamento da busca?

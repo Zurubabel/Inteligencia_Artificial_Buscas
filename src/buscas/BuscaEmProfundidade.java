@@ -23,34 +23,33 @@ public class BuscaEmProfundidade extends Busca{
 
 	@Override
 	public boolean buscarResultado(No no) {
-		this.pilhaNos.add(no);
 		if (isResultadoBusca(no)) {
 			// Exibir o caminho
-			//obterResultadoPaternal(no);
-			obterResultadoViaPilha();
+			obterResultadoPaternal(no);
 			return true;
 		} else {
 			// Expandir os próximos nós (esquerda -> direita)
-			if (no.getNoEsquerda() != null && this.buscarResultado(no.getNoEsquerda())) { 
-				return true;
+			if (no.getNoDireita() != null) {
+				this.pilhaNos.push(no.getNoDireita());
+			}
+			if (no.getNoEsquerda() != null) { 
+				this.pilhaNos.push(no.getNoEsquerda());
 			}
 			
-			if (no.getNoDireita() != null && this.buscarResultado(no.getNoDireita())) {
-				return true;
-			}
 		}
-		this.pilhaNos.pop();
+		No noPonta = this.pilhaNos.pop();
+		if (noPonta != null && buscarResultado(noPonta)) {
+			return true;
+		}
 		return false;
 	}
 	
-	private void obterResultadoViaPilha() {
-		String retorno = "";
-		
-		while (this.pilhaNos.size() > 0) {
-			retorno = this.pilhaNos.pop().getValor() + " " + retorno;
+	@Override
+	public int contarNosFolha() {
+		if (this.pilhaNos != null) {
+			return this.pilhaNos.size();
 		}
+		return 0;
+	}
 		
-		this.setTextoResposta(retorno);
-	}		
-	
 }

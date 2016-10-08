@@ -1,10 +1,8 @@
 package principal;
 
-import buscas.BuscaEmLargura;
-import buscas.BuscaEmProfundidade;
 import nos.No;
 
-public class Buscas {
+public class BuscasPrincipal {
 
 	public static void main(String[] args) {
 		
@@ -24,7 +22,7 @@ public class Buscas {
 		
 		no2.setNoEsquerda(no5);
 		no2.setNoDireita(no6);
-		
+				
 		/*no0.setNoEsquerda(no1);
 		no1.setNoEsquerda(no3);
 		no3.setNoEsquerda(no5);
@@ -33,11 +31,11 @@ public class Buscas {
 		/*BuscaEmProfundidade bep = new BuscaEmProfundidade(4);
 		
 		bep.buscarResultado(no0);
-		bep.exibirTextoResultado();*/
+		bep.exibirTextoResultado();
 		
-		BuscaEmLargura bel = new BuscaEmLargura(4);
+		/*BuscaEmLargura bel = new BuscaEmLargura(4);
 		bel.buscarResultado(no0);
-		bel.exibirTextoResultado();
+		bel.exibirTextoResultado();*/
 		
 		
 	}
